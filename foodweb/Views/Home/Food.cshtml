@@ -1,0 +1,18 @@
+﻿@model List<foodweb.Models.Food>
+@{
+    ViewBag.Title = "Food";
+}
+
+<h2>Food</h2>
+<table>
+    @for (int i = 1; i< 24;i++ )
+    {
+        var s = Model[i].DishName;
+        var p = Model[i].Price;
+        <tr>
+            <td>@s</td>
+            <td>@p</td>
+        </tr>
+    }
+       
+    </table>

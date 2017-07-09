@@ -1,0 +1,95 @@
+﻿
+@model foodweb.Models.Cart
+@{
+    ViewBag.Title = "Checkout";
+}
+
+
+<style>
+    td {
+        color: #F44C41;
+        font-size:large;
+    }
+
+    input[type=submit] {
+        background-color: #F44C41; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
+</style>
+<script>
+    function orderPlaced() {
+        document.getElementById("p1").innerHTML = "Your Order is placed";
+    }
+</script>
+
+<h2 style="color: #F44C41;">Items You Added</h2>
+<table cellpadding="20">
+
+    
+    
+        <tr>
+            <td>@Model.Food.DishName</td>
+            <td>@Model.Food.Price</td>
+            @if(@Model.Food.DishName!=null)
+            {
+                <td><a href="/Home/RemoveItem/1">Remove Item</a></td>
+            }
+        </tr>
+    <tr>
+        <td>@Model.Food1.DishName</td>
+        <td>@Model.Food1.Price</td>
+        @if (@Model.Food1.DishName != null)
+        {
+            <td><a href="/Home/RemoveItem/2">Remove Item</a></td>
+        }
+    </tr>
+    <tr>
+        <td>@Model.Food2.DishName</td>
+        <td>@Model.Food2.Price</td>
+        @if (@Model.Food2.DishName != null)
+        {
+            <td><a href="/Home/RemoveItem/3">Remove Item</a></td>
+        }
+
+    </tr>
+    <tr>
+        <td>@Model.Food3.DishName</td>
+        <td>@Model.Food3.Price</td>
+        @if (@Model.Food3.DishName != null)
+        {
+            <td><a href="/Home/RemoveItem/4">Remove Item</a></td>
+        }
+    </tr>
+    <tr>
+        <td>@Model.Food4.DishName</td>
+        <td>@Model.Food4.Price</td>
+        @if (@Model.Food4.DishName != null)
+        {
+            <td><a href="/Home/RemoveItem/5">Remove Item</a></td>
+        }
+    </tr>
+    <tr>
+        <td>@Model.Food5.DishName</td>
+        <td>@Model.Food5.Price</td>
+        @if (@Model.Food5.DishName != null)
+        {
+            <td><a href="/Home/RemoveItem/6">Remove Item</a></td>
+        }
+    </tr>
+    
+</table>
+<h1 style="color: #F44C41;">Total= @Model.total() </h1>
+<input type="submit"   onclick="orderPlaced()" name=" add" value="Order Now">
+<input type="submit" onclick="location.href = '/Home/Index/'" name=" add" value="Logout">
+<br /><br />
+<p id="p1" style="color: #F44C41; font-size: 20px"></p>

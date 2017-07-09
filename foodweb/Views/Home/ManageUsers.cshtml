@@ -1,0 +1,53 @@
+﻿@model List<foodweb.Models.AspNetUser>
+@{
+    ViewBag.Title = "ManageUsers";
+}
+
+<style>
+    td {
+        color: #F44C41;
+        font-size: large;
+        margin-left:100px;
+    }
+
+    input[type=submit] {
+        background-color: #F44C41; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+</style>
+
+
+<body>
+    <h2 style="text-align: center; color: #F44C41;">Manage Users</h2>
+    <table cellpadding="20" >
+        <tr>
+            <th style="color: #F44C41; font-size: large;" >Users:</th>
+        </tr>
+        @foreach (var s in Model)
+        {
+            if(@s.UserName!="admin")
+            { 
+            <tr>
+                <td>@s.UserName</td>
+                <td><a href="/Home/Delete/@s.Id">Delete</a></td>
+                
+            </tr>
+        }
+            
+        }
+
+    </table>
+    <br /><br /><br /><br />
+    <input style="margin-left:500px;" type="submit" onclick="location.href = '/Home/AdminPanel/'" name=" add" value="Panel">
+    
+</body>
+

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "AdminPanel";
+}
+
+<style>
+    input[type=submit] {
+        background-color: #F44C41; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+        
+    }
+</style>
+<h2 style="text-align: center; color: #F44C41;" >AdminPanel</h2><br /><br /><br /><br />
+<input style="margin-left:500px;" type="submit" onclick="location.href = '/Home/ManageUsers/'" name=" add" value="Manage Users">
+<input type="submit" onclick="location.href = '/Home/ManageMenu/'" name=" add" value="Manage Menu">
+<br /><input style="margin-left:600px;"  type="submit" onclick="location.href = '/Home/Index2/'" name=" add" value="Visit Website">
+<br /><input style="margin-left:620px;" type="submit" onclick="location.href = '/Home/Index/'" name=" add" value="Logout">
